@@ -1,0 +1,61 @@
+\section{Restricted Isometry Property}
+
+\begin{boxdefinition}
+    For each $s=1,\dots,n$, the isometry constant $\delta_s$
+    of a matrix $\Phi\in\C^{m\times n}$ is the smallest 
+    numer such that 
+    $$
+    (1-\delta_s)\|x\|_2^2\leq\|\Phi x\|_2^2
+    \leq(1+\delta_s)\|x\|_2^2
+    $$
+    for every $s$-sparse $x$.
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    Let $y=\Phi x$. Assume that $\delta_s<\sqrt{2}-1$.
+    Then, the solution $x^*$ to
+    $$
+    \argmin\|x'\|_1 \ \ \text{subject to } \Phi x'=y
+    $$
+    satisfies
+    $$
+    \|x^*-x\|_1\leq C_0\|x-x_s\|_1
+    $$
+    and
+    $$
+    \|x^*-x\|_2\leq C_0s^{-1/2}\|x-x_s\|_1
+    $$
+    for some constant $C_0$. In particular, if $x$ is
+    $s$-sparse, recovery is exact.
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    Let $y=\Phi x+n$. Assume that $\delta_s<\sqrt{2}-1$
+    and $\|n\|_2\leq\varepsilon$.
+    Then, the solution $x^*$ to
+    $$
+    \argmin\|x'\|_1 \ \ \text{subject to } 
+    \|y-\Phi x'\|\leq\varepsilon
+    $$
+    satisfies
+    $$
+    \|x^*-x\|_2\leq C_0s^{-1/2}\|x-x_s\|_1+C_1\varepsilon
+    $$
+    for some constants $C_0,C1$.
+\end{boxtheorem}
+
+\begin{boxdefinition}
+    A matrix $\Phi$ is said to satisfy the restricted
+    null-space property w.r.t $S$ if 
+    $$
+    \max_{x\in\ker \Phi\setminus\{0\}}
+    \frac{\sum_{k\in S}|x_k|}{\sum_k|x_k|}<\frac{1}{2}.
+    $$
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    If the isometry constant of order $2s$ of $\Phi$
+    satisfies $\delta_{2s}<1/3$, then $\Phi$
+    satisfies the restricted null-space property
+    for any $S$ with $|S|\leq s$.
+\end{boxtheorem}

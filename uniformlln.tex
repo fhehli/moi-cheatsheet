@@ -1,0 +1,123 @@
+\section{Uniform Laws of Large Numbers}
+
+\begin{boxtheorem}[Markov's Inequality]
+    Let $X$ be a random variable and assume
+    $g:\R\to[0,\infty)$ is increasing. Then,
+    for any $c$ with $g(c)>0$, 
+    $$
+    \P(X\geq c)\leq\frac{\E g(x)}{g(c)}.
+    $$
+\end{boxtheorem}
+
+\begin{boxtheorem}[Glivenko-Cantelli]
+    For any distribution, the empirical CDF $\hat {F}_n$
+    satisfies
+    $$
+    \|\hat F_n-F\|_\infty\to0 \ \ \ \text{a.s.}
+    $$
+\end{boxtheorem}
+
+\begin{boxdefinition}[]
+    Let $\mathcal{F}$ be a set of integrable real-valued
+    functions and let $\{X_i\}_{i=1}^n$ be a collection 
+    of i.i.d. samples from some distribution $\P$. Then
+    we write 
+    $$
+    \|\P_n-\P\|_\mathcal{F}=\sup_{f\in\mathcal{F}}
+    \left|\frac{1}{n}\sum_{i=1}^n f(X_i)-\E f(X)\right|.
+    $$
+\end{boxdefinition}
+
+\begin{boxdefinition}[Glivenko-Cantelli Class]
+    We say that $\mathcal{F}$ is a Glivenko-Cantelli 
+    class for $\P$ if $\|\P_n-\P\|_\mathcal{F}$ converges
+    to zero in probability as $n\to\infty$.
+\end{boxdefinition}
+
+\begin{boxdefinition}[Rademacher Complexity]
+    For any fixed collection 
+    $x_1^n=(x_1,\dots,x_n)$, consider the set
+    $$
+    \mathcal{F}(x_1^n)= 
+    \left\lbrace(f(x_1),\dots,f(x_n)
+    \mid f\in \mathcal{F})\right\rbrace.
+    $$
+    The empirical Rademacher complexity is defined as 
+    $$
+    \mathcal{R}(\mathcal{F}(x_1^n)/n)=
+    \E_\varepsilon\left[\sup_{f\in\mathcal{F}}
+    \left|\frac{1}{n}\sum_{i=1}^n\varepsilon_i
+    f(x_i)\right|\right],
+    $$
+    where $(\varepsilon_i)_{i=1}^n$ is a sequence 
+    of Rademacher random variables (uniform on
+    $\{-1,+1\}$.)\\
+    The Rademacher complexity is defined as
+    \begin{align}
+        \mathcal{R}_n(\mathcal{F})&=\E_X
+        \mathcal{R}(\mathcal{F}(x_1^n)/n)\\
+        &=\E_{\varepsilon,X}\left[\sup_{f\in\mathcal{F}}
+    \left|\frac{1}{n}\sum_{i=1}^n\varepsilon_i
+    f(x_i)\right|\right].
+    \end{align}
+\end{boxdefinition}
+
+\begin{boxtheorem}[]
+    For any $b$-uniformly bounded function class,
+    i.e. $\|f\|_\infty\leq b$ for all $f\in\mathcal{F}$
+    any $n$ and $\delta\geq0$ we have 
+    $$
+    \|\P_n-P\|_\mathcal{F}\leq 
+    2\mathcal{R}_n(\mathcal{F}) + \delta$$
+    with probability at least 
+    $1-e^{-\frac{n\delta^2}{2b^2}}.$ Consequently, if
+    $\mathcal{R}_n(\mathcal{F})=o(1)$, we have 
+    $\|\P_n-\P\|_\mathcal{F}\to0$ a.s.
+\end{boxtheorem}
+
+\begin{boxdefinition}[Polynomial Discrimination]
+    A class $\mathcal{F}$ of functions has polynomial
+    discrimination of order $\nu\geq1$ if for each
+    $n$ and $x_1^n=(x_1,\dots,x_n)$ the set 
+    $\mathcal{F}(x_1^n)$ has cardinality upper bounded 
+    according to 
+    $$
+    |\mathcal{F}(x_1^n)|\leq (n+1)^\nu.
+    $$
+\end{boxdefinition}
+
+\begin{boxtheorem}[]
+    Suppose that $\mathcal{F}$ has polynomial discrimination
+    of order $\nu$. Then, for all $n$ and 
+    $x_1^n=(x_1,\dots,x_n)$ we have 
+    $$
+    \mathcal{R}(\mathcal{F}(x_1^n)/n)
+    \leq 4D(x_1^n)\sqrt{\frac{\nu\log(n+1)}{n}},
+    $$
+    where $D(x_1^n)=\sup_{f\in\mathcal{F}}
+    \sqrt{\frac{\sum_{i=1}^nf(x_i)^2}{n}}$.
+\end{boxtheorem}
+
+\begin{boxdefinition}[VC Dimension]
+    Given a class $\mathcal{F}$
+     of binary-valued functions, we
+    say that the set
+    $x^n_1 = (x_1 , \dots, x_n )$
+     is shattered by $\mathcal{F}$
+      if $|\mathcal{F}(x^n_1 )| = 2n$.
+    The VC dimension $\nu(\mathcal{F})$
+    is the largest integer $n$ for which there 
+    is some collection $x^n_1 = (x_1 , \dots , x_n )$
+     of $n$ points that is shattered by $\mathcal{F}$.
+\end{boxdefinition}
+
+\begin{boxtheorem}[Sauer-Shelah]
+    Consider a set class $S$ with $\nu(S) < \infty.$
+    Then, for any collection of points 
+    $x_1^n = (x_1 , \dots , x_n )$ with $n\geq\nu(S)$
+    we have 
+    $$
+    |S(x_1^n)|\leq\sum_{i=0}^{\nu(S)}\binom{n}{i}
+    \leq (n+1)^{\nu(S)}.$$
+
+\end{boxtheorem}

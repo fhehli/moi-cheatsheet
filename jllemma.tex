@@ -1,0 +1,16 @@
+\section{Johnson-Lindenstrauss Lemma}
+\begin{boxtheorem}
+    Let $\varepsilon\in(0,1)$ and suppose 
+    $$
+    k\geq \frac{8}{\varepsilon^2-\varepsilon^3}\log(2m)
+    .$$
+    Then, for every set $X\subset \R^n$ of $m$ points,
+    there exists a (linear) map $f\colon \R^n\to \R^k$ such
+    that for all $x,x'\in X$ we have
+    $$
+    (1-\varepsilon)\|x-x'\|^2\leq
+    \|f(x)-f(x')\|^2\leq
+    (1+\varepsilon)\|x-x'\|^2.
+    $$
+\end{boxtheorem}
+

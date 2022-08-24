@@ -1,0 +1,80 @@
+\section{Frame Theory}
+
+If $\text{rank}(A)=m$ for $A\in\C^{n\times m}, n\geq m$, then 
+$A^\dagger = (A^*A)^{-1}A^*$ is a left-inverse of $A$ and the
+solutions to $LA=I$ are 
+$$L=A^\dagger+M(I-AA^\dagger), \ \ M\in \C^{n\times m}. $$
+
+\begin{boxdefinition}[Frame]
+	Let $H$ be a Hilbert space. A set $(g_k)_k\in H$ is called a frame
+    if there exist $0<A\leq B<\infty$ such that
+    $$A\|x\|^2\leq \sum_k\|\la x,g_k\ra\|^2\leq B\|x\|^2, 
+    \ \ \text{for all } x\in H.$$
+\end{boxdefinition}
+\begin{boxdefinition}[Analysis \& Synthesis]
+    $T\colon H\to \ell^2, \ T(x)=(\la x,g_k\ra)_k$\\
+    $T^*\colon \ell^2 \to H, \ T^*(y)=\sum_ky_kg_k$
+\end{boxdefinition}
+
+\begin{boxtheorem} [Frame Operator]
+    The frame operator $S=T^*T$ satisfies:
+    \begin{listnr}
+        \item $S^*=S$.
+        \item $S$ is positive definite.
+        \item $S$ has a square root $S^{1/2}.$
+        \item $S$ is invertible.
+    \end{listnr}
+\end{boxtheorem}
+
+\begin{boxtheorem}[Frame Bounds]
+    The tightest possible frame bounds are given by
+    the smallest and largest eigenvalues of $S$.
+\end{boxtheorem}
+
+\begin{boxtheorem}[Dual Frame]
+    For a frame $(g_k)_k$ with frame bounds $A$ and $B$,
+    the set $(\tilde{g}_k)_k=(S^{-1}g_k)_k$ is frame with frame bounds 
+    $1/B$ and $1/A$, and with analysis operator 
+    $\tilde{T}=TS^{-1}$.
+     We have $\tilde{T}^*T=T^*\tilde T=\id$.
+\end{boxtheorem}
+
+\begin{boxdefinition}[Tight Frame]
+    A frame with frame bounds $A=B$ is called a {tight frame.}
+\end{boxdefinition}
+
+\begin{boxtheorem}[Tight Frame]
+    A frame is tight with frame bound $A$ iff its frame operator is of the
+    form $S=A\id.$
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    For any frame $(g_k)_k$, the set $(S^{-1/2}g_k)_k$ 
+    is a tight frame with frame bound 1.
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    A tight frame $(g_k)_k$ with frame bound $A=1$ and $\|g_k\|=1$
+    for all $k$ is an ONB.
+\end{boxtheorem}
+
+\begin{boxdefinition}
+    A set $(g_k)_k$ is called complete, if 
+    $$\la x,g_k\ra =0 \ \forall x\in H \ \imp \ x=0.$$
+\end{boxdefinition}
+
+\begin{boxdefinition}
+    A frame $(g_k)_k$ is called exact if for all $n$, the set 
+    $(g_k)_{k\neq n}$ is incomplete.
+\end{boxdefinition}
+
+\begin{boxtheorem} [Exactness]
+    Let $(g_k)_k$ be a frame and $(\tilde g_k)_k$ its canonical dual. Then,
+    $(g_k)_k$ is exact iff $\la g_j,\tilde g_k\ra=\delta_{jk}.$ 
+\end{boxtheorem}
+
+\begin{boxtheorem}[Sampling theorem]
+    Let $x\in L^2(\R)$ be bandlimited to $B$, i.e. $\hat x(f)=0$ if 
+    $|f|> B$. Then, for $1/T\geq2B$, 
+    $$x(t)=2BT\sum_{k=-\infty}^\infty x(kT)\operatorname{sinc}(2B(t-kT)).$$
+\end{boxtheorem}

@@ -1,0 +1,60 @@
+\section{Uncertainty Relations}
+\begin{boxdefinition}[Operator Norm]
+    $$\triv A=\max_{\|x\|=1}\|Ax\|.$$
+\end{boxdefinition}
+
+\begin{boxdefinition}[Frobenius Norm]
+    $$\|A\|=\sqrt{\tr (AA^H)}.$$
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    $$\frac{\| A\|}{\sqrt{\rank A}}\leq\triv A\leq\|A\|.$$
+\end{boxtheorem}
+
+\begin{boxdefinition}
+    For unitary $U$, we set $$\Delta_{P,Q}(U)=\triv{D_PUD_QU^H}.$$
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    $$\Delta_{P,Q}(U)=\max_{x\in\im UD_QU^H}\frac{\|D_px\|}{\|x\|}.$$
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    \begin{align*}
+        \frac{\sqrt{\tr(D_PUD_QU^H)}}{\min\{|P|,|Q|\}}\leq\Delta_{P,Q}(U)
+        \leq \sqrt{\tr(D_PUD_QU^H)}.        
+    \end{align*}
+\end{boxtheorem}
+
+\begin{boxdefinition}[Coherence]
+    For $A=(a_1\dots a_n)\in \C^{m\times n}$ with normalized columns,
+    the coherence is defined as $\mu(A)=\max_{i\neq j}|a_i^Ha_j|$.
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    $$\Delta_{P,Q}(U)\leq \sqrt{|P||Q|}\mu([I\ U]).$$
+\end{boxtheorem}
+
+\begin{boxdefinition}
+    Let $P\subseteq \{1,\dots,m\}$ and $\varepsilon_P\in[0,1]$. A
+    vector $x\in\C^m$ is called $\varepsilon_P$-concentrated
+    if $\|x-x_P\|_2\leq\|\varepsilon_P\|x\|_2.$
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    Let $A,B\in\C^{m\times m}$ be unitary and $P,Q\subseteq \{1,\dots,m\}$.
+    Suppose there exists a nonzero $\varepsilon_P$-concentrated 
+    $p\in\C^m$ and a nonzero $\varepsilon_Q$-concentrated $q\in\C^m$
+    such that $Ap=Bq.$ Then, 
+    $$
+    |P||Q|\geq \frac{[1-\varepsilon_P-\varepsilon_Q]_+^2}{\mu([A\ B])^2}
+    .$$
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    Let $A,B\in\C^{m\times m}$ be unitary. If $Ap=Bq$ for nonzero
+    $p,q\in\C^m$, then 
+    $$
+    \|p\|_0\|q\|_0\geq\frac{1}{\mu([A\ B])^2}.
+    $$
+\end{boxtheorem}

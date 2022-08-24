@@ -1,0 +1,87 @@
+\newpage
+\section{Approximation Theory}
+
+Consider a set $C\subseteq L^2(\Omega)$. 
+
+\begin{boxdefinition}[]
+    Denote by 
+    $$
+    \mathfrak{E}^l=\{E\colon C\to\{0,1\}^l\}
+    $$
+    the set of binary encoders of length $l$
+    and by 
+    $$
+    \mathfrak{D}^l=\{D\colon \{0,1\}^l\to C\}
+    $$
+    the set of binary decoders of length $l$.
+\end{boxdefinition}
+
+\begin{boxdefinition}
+    The minimax code length $L(\varepsilon,C)$ for 
+    $\varepsilon$ is 
+    $$
+    L(\varepsilon,C)=\min\big\lbrace l\in\N:\exists (E,D)\in
+    \mathfrak{E}^l\times\mathfrak{D}^l:
+    \sup_{f\in C}\|D(E(f)) -f \|_2\leq\varepsilon\big\rbrace.$$
+    The optimal exponent $\gamma^*(C)$ is defined as
+    $$
+    \gamma^*(C)=\sup\left\lbrace
+    \gamma\in\R:L(\varepsilon,C)\in
+    O(\varepsilon^{-1/\gamma}),\ \varepsilon\to 0
+    \right\rbrace.$$
+\end{boxdefinition}
+
+\begin{boxdefinition}[]
+    A metric is a function $d: X\times X\to\R$ that
+    satisfies
+    \begin{enumerate}
+        \item $d(x,y)\geq 0$,
+        \item $d(x,y)=0 \Leftrightarrow x=y$,
+        \item $d(x,y)=d(y,x)$,
+        \item $d(x,z)\leq d(x,y)+d(y,z)$.
+    \end{enumerate}
+\end{boxdefinition}
+
+\begin{boxdefinition}[$\varepsilon$-covering]
+    An $\varepsilon$-covering of a compact set $C$
+    with respect to the metric $d$ is a set
+    $\{x_1,\dots,x_n\}\subset C$ such that for any
+    $x\in C$ there exists an $x_i$ such that 
+    $d(x,x_i)\leq \varepsilon$. 
+\end{boxdefinition}
+
+\begin{boxdefinition}[Covering Number]
+    The $\varepsilon$-covering number 
+    $N(\varepsilon, C,d)$ is the cardinality of 
+    the smallest $\varepsilon$-covering.
+\end{boxdefinition}
+
+\begin{boxdefinition}[Metric Entropy]
+    The metric entropy of $C$ is defined 
+    as 
+    $$
+    \log_2 N(\varepsilon,C,d)
+    .$$
+\end{boxdefinition}
+
+\begin{boxdefinition}[$\varepsilon$-packing]
+    An $\varepsilon$-packing of a compact set $C$
+    with respect to the metric $d$ is a set 
+    $\{x_1,\dots,x_n\}\subset C$ such that 
+    $d(x_i,x_j)>\varepsilon$ if $i\neq j$.
+\end{boxdefinition}
+
+\begin{boxdefinition}[Packing Number]
+    The $\varepsilon$-packing number 
+    $M(\varepsilon,C,d)$ is the cardinality of 
+    the largest $\varepsilon$-packing.
+\end{boxdefinition}
+
+\begin{boxtheorem}[]
+    The packing and covering number are related 
+    according to 
+    $$
+    M(2\varepsilon,C,d)\leq N(\varepsilon, C,d)\leq
+    M(\varepsilon,C,d)
+    .$$
+\end{boxtheorem}

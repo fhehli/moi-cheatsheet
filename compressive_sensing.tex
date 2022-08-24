@@ -1,0 +1,73 @@
+\newpage
+\section{Compressive Sensing}
+
+\begin{boxdefinition}[Spark]
+    The spark of a matrix is denfined as the cardinality
+    of the smallest set linearly dependent columns.
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    For a matrix $D\in\C^{m\times n}$, uniqueness of 
+    recovery of $s$-sparse vectors $x$ from the 
+    observation $y=Dx$ is guaranteed if 
+    $${\operatorname{spark}(D)}>2s.$$
+\end{boxtheorem}
+
+\begin{boxdefinition}[P0]
+    $\argmin \|x\|_0$ subject to $y=Dx$.
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    $$
+    1+\frac{1}{\mu(D)}\leq\operatorname{spark}(D)
+    $$
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    If 
+    $$
+    \|x_0\|_0<\frac{1}{2}\left(1+\frac{1}{\mu(D)}\right),
+    $$
+    then $x_0$ is the unique solution of (P0).
+\end{boxtheorem}
+
+\begin{boxdefinition}[P1]
+    $\argmin \|x'\|_1$ subject to $y =Dx'$.
+\end{boxdefinition}
+
+\begin{boxtheorem}
+    Let $y=Dx_0$ and assume $x_0$ has support set $S$.
+    If 
+    $$
+    \max_{x\in\ker D\setminus\{0\}}
+    \frac{\sum_{k\in S}|x_k|}{\sum_k|x_k|}<\frac{1}{2},
+    $$
+    then $x_0$ is the unique solution of (P1).
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    If,
+    \begin{equation}
+    \label{a}
+    \|x_0\|_0<\frac{1}{2}\left(1+\frac{1}{\mu(D)}\right),
+    \end{equation}
+    then 
+    $$
+    \max_{x\in\ker D\setminus\{0\}}
+    \frac{\sum_{k\in S}|x_k|}{\sum_k|x_k|}<\frac{1}{2}
+    .$$
+    Hence, (\refeq{a}) is a sufficient condition 
+    such that $x_0$ is the unique solution of (P1).
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    If $D\in \C^{m\times n}$, then
+    $$
+    \mu(D)  \geq \sqrt{\frac{n-m}{m(n-1)}}.
+    $$
+\end{boxtheorem}
+
+\begin{boxtheorem}
+    $$\|x\|_\infty\leq\|x\|_2\leq\|x\|_1
+    \leq\sqrt{|\operatorname{supp}x|}\|x\|_2$$
+\end{boxtheorem}
