@@ -1,0 +1,2 @@
+# Mathematics of Information
+This is the cheatsheet I used for the course [Mathematics of Information](https://www.vorlesungen.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lang=en&semkez=2022S&ansicht=ALLE&lerneinheitId=157460&). It was quickly thrown together and comprises the most important bits from the course script. It might be useful to you as a starting point for your cheatsheet because it uses only three pages out of the ten page limit. 
